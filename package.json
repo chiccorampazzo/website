@@ -7,7 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "academicons": "https://github.com/peterampazzo/academicons",
+    "academicons": "^1.8.6",
     "add": "^2.0.6",
     "autoprefixer": "^10.1.0",
     "gatsby": "^2.26.1",
