@@ -1,18 +1,21 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import "academicons/css/academicons.css"
 
-const Layout = ({ children }) => {
+import SEO from "./seo"
+import Header from "./header"
+import Footer from "./footer"
+
+const Layout = ({
+  title,
+  description,
+  lang = "en",
+  fullpage = false,
+  children,
+  ...props
+}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,25 +26,27 @@ const Layout = ({ children }) => {
     }
   `)
 
+  title = title || props?.pageContext?.frontmatter.title
+  description = description || props?.pageContext?.frontmatter.description
+
+  lang = lang || props?.pageContext?.frontmatter.lang
+
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
+      <SEO title={title} description={description} lang={lang} />
+      <Header
+        siteTitle={data.site.siteMetadata.title || `Title`}
+        fullpage={fullpage}
+      />
+
+      <main
+        className={"mx-auto max-w-3xl " + (!fullpage ? `p-5 mt-32 mb-20` : ``)}
       >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+        {!fullpage && <h1 className="text-5xl mb-4 font-bold">{title}</h1>}
+        {children}
+      </main>
+
+      {!fullpage && <Footer />}
     </>
   )
 }

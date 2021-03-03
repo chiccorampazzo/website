@@ -1,0 +1,90 @@
+{
+  "last_update": "08/02/2021",
+  "items": [
+    {
+      "title": "Peer-Reviewed",
+      "papers": [
+        {
+          "authors": "Grow, A., Perrotta, D., Del Fava, E., Cimentada, J., <b>Rampazzo, F.</b>, Gil-Clavel, S., Zagheni, E.",
+          "title": "Addressing Public Health Emergencies via Facebook Surveys: Advantages, Challenges, and Practical Considerations",
+          "date": "2020",
+          "journal": "Journal of Medical Internet Research 2020;22(12):e20653",
+          "url": "https://doi.org/10.2196/20653"
+        },
+        {
+          "authors": "<b>Rampazzo, F.</b>, Zagheni, E., Weber, I., Testa, M. R., Billari, F.",
+          "title": "Mater Certa Est, Pater Numquam: What Can Facebook Advertising Data Tell Us about Male Fertility Rates?",
+          "date": "June 2018",
+          "journal": "Twelfth International AAAI Conference on Web and Social Media"
+        },
+        {
+          "authors": "Testa, M. R., <b>Rampazzo, F.</b>",
+          "title": "From Intentions to Births: Paths of Realisation in a Multi-Dimensional Life Course",
+          "date": "2018",
+          "journal": "Vienna Yearbook of Population Research 16 (2018), pp. 177–198. issn: 1728-4414",
+          "url": "https://www.jstor.org/stable/26670709"
+        }
+      ]
+    },
+    {
+      "title": "Book Chapter",
+      "papers": [
+        {
+          "authors": "<b>Rampazzo, F.</b>, Weber, I.",
+          "title": "Facebook Advertising Data in Africa",
+          "date": "Sept. 2020",
+          "journal": " International Organization of Migration. Migration in West and North Africa and across the Mediterranean: Trends, Risks, Developments, Governance (Sept. 2020), p. 9"
+        }
+      ]
+    },
+    {
+      "title": "Work in Progress",
+      "papers": [
+        {
+          "authors": "<b>Rampazzo, F.</b>, Raybould, A., Rampazzo, P., Barker, R.",
+          "title": "From the Stork to Fertility Apps",
+          "date": "2020"
+        },
+        {
+          "authors": "<b>Rampazzo, F.</b>, Bijak, J., Vitali, A., Weber, I., Zagheni, E.",
+          "title": "A Framework for Estimating Migrant Stocks Using Digital Traces and Survey Data: an Application in the United Kingdom",
+          "date": "2020",
+          "status": "Review and resubmit"
+        },
+        {
+          "authors": "Schwanitz, K., <b>Rampazzo, F.</b>, Vitali, A.",
+          "title": "What are the intentions to leave the parental home composed of ? Using the Generations and Gender Survey to compare intentions across Europe",
+          "date": "2020",
+          "status": "Review and resubmit"
+        },
+        {
+          "authors": "Rosenzweig, R., Bergquist, P., Hoffmann Pham, K., <b>Rampazzo, F.</b>, Mildenberger, M.",
+          "title": "Survey sampling in the Global South using Facebook advertisement",
+          "date": "2020",
+          "status": "Under review"
+        },
+        {
+          "authors": "Perrotta, D., Grow, A., <b>Rampazzo, F.</b>, Cimentada, J., Fava, E. D., Gil-Clavel, S., Zagheni, E.",
+          "title": "Behaviors and Attitudes in Response to the COVID-19 Pandemic: Insights from a Cross-National Facebook Survey",
+          "date": " July 2020",
+          "journal": "medRxiv (July 2020), p. 2020.05.09.20096388",
+          "url": "https://doi.org/10.1101/2020.05.09.20096388"
+        },
+        {
+          "authors": "Fava, E. D., Cimentada, J., Perrotta, D., Grow, A., <b>Rampazzo, F.</b>, Gil-Clavel, S., Zagheni, E.",
+          "title": "The Differential Impact of Physical Distancing Strategies on Social Contacts Relevant for the Spread of COVID-19",
+          "date": "May 2020",
+          "journal": "medRxiv (May 2020), p. 2020.05.15.20102657",
+          "url": "https://doi.org/10.1101/2020.05.15.20102657"
+        },
+        {
+          "authors": "Hoffman Pham, K., <b>Rampazzo, F.</b>, Rosenzweig, L. R.",
+          "title": "Online Surveys and Digital Demography in the Developing World: Facebook Users in Kenya",
+          "date": "Oct. 2019",
+          "journal": "arXiv:1910.03448 [cs]",
+          "url": "https://arxiv.org/abs/1910.03448"
+        }
+      ]
+    }
+  ]
+}

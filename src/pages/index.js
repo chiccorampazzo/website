@@ -1,21 +1,36 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Avatar from "../components/avatar"
+import Social from "../components/social"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+  <Layout title="Home" fullpage={true}>
+    <div
+      style={{
+        display: `flex`,
+        justifyContent: `center`,
+        alignItems: `center`,
+        flexDirection: `column`,
+        height: `100vh`,
+        margin: `auto`,
+      }}
+    >
+      <div className="w-52">
+        <Avatar />
+      </div>
+      <div className="flex items-center text-center">
+        <h1 className="text-gray-900 font-semibold max-w-sm lg:max-w-lg text-4xl mt-4 justify-center">
+          Francesco Rampazzo
+        </h1>
+      </div>
+      <h2 className="text-gray-600 mt-4 font-medium text-xl uppercase tracking-widest">
+        Demographer
+      </h2>
+      <div className="mt-4 flex">
+        <Social />
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
 

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/Butler-Bold.woff") format("woff");
+}
+
+@layer base {
+  main a {
+    @apply text-blue-700;
+    @apply hover:text-yellow-600;
+  }
+  main p {
+    @apply mb-8;
+    @apply text-xl;
+    @apply leading-loose;
+  }
+}
