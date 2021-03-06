@@ -17,4 +17,10 @@
     @apply text-xl;
     @apply leading-loose;
   }
+  main ul {
+    @apply mb-8;
+    @apply text-xl;
+    @apply leading-loose;
+    @apply list-disc;
+  }
 }
