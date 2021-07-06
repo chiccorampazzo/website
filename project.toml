@@ -2,3 +2,6 @@
   base = "/"
   publish = "public/"
   command = "yarn run build"
+
+[context.production]
+  publish = "public/"
