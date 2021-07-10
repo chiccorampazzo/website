@@ -5,7 +5,11 @@ import Avatar from "../components/avatar"
 import Social from "../components/social"
 
 const IndexPage = () => (
-  <Layout title="Home" fullpage={true}>
+  <Layout
+    title="Home Page"
+    description="Francesco Rampazzo is a CD Fellow in Marketing and Consumer Demography at Saïd Business School and Leverhulme Centre for Demographic Science at University of Oxford"
+    fullpage={true}
+  >
     <div
       style={{
         display: `flex`,

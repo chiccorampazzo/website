@@ -10,6 +10,13 @@ module.exports = {
       linkedin: `frampazzo`,
       googleScholar: `_oD24CIAAAAJ`,
     },
+    seo: {
+      sameAs: [
+        "https://twitter.com/chiccorampazzo",
+        "https://www.sbs.ox.ac.uk/about-us/people/francesco-rampazzo",
+        "https://scholar.google.com/citations?user=_oD24CIAAAAJ",
+      ]
+    },
     nav: [
       {
         name: "About me",

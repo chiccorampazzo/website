@@ -12,6 +12,10 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
+            seo {
+              sameAs
+            }
           }
         }
       }
@@ -20,6 +24,18 @@ function SEO({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+
+  const person = {
+    "@context": "http://schema.org/",
+    author: {
+      "@type": "Person",
+      name: site.siteMetadata.description,
+      url: site.siteMetadata.siteUrl,
+      sameAs: site.siteMetadata.seo.sameAs,
+    },
+  }
+
+  const JSONschema = JSON.stringify(person)
 
   return (
     <Helmet
@@ -62,7 +78,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script type="application/ld+json">{JSONschema}</script>
+    </Helmet>
   )
 }
 
