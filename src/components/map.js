@@ -14,7 +14,7 @@ export default class LeafletMap extends Component {
           <MapContainer
             center={position}
             zoom={zoom}
-            scrollWheelZoom={false}
+            scrollWheelZoom={true}
             style={{
               height: `480px`,
               width: `100%`,
