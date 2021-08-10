@@ -15,7 +15,7 @@ module.exports = {
         "https://twitter.com/chiccorampazzo",
         "https://www.sbs.ox.ac.uk/about-us/people/francesco-rampazzo",
         "https://scholar.google.com/citations?user=_oD24CIAAAAJ",
-      ]
+      ],
     },
     nav: [
       {
@@ -92,6 +92,12 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-leaflet",
+      options: {
+        linkStyles: true,
       },
     },
   ],
