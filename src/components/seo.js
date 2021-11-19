@@ -27,6 +27,7 @@ function SEO({ description, lang, meta, title }) {
 
   const person = {
     "@context": "http://schema.org/",
+    "@type": "WebSite",
     author: {
       "@type": "Person",
       name: site.siteMetadata.description,
