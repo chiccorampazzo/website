@@ -1628,7 +1628,7 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.11.tgz#6a4b5891dccb6402ff4e944de843036ee1ffd4f5"
   integrity sha512-nEBLOa0JgtqahmPrnJZ18epLiFBzxhdKgo4uhN3TaBFRmM30pEVrS9FAEV4tg92d8PTdU+dYQx2lnpPyFMgMcg==
 
-"@monsonjeremy/react-leaflet-core@1.1.1", "@monsonjeremy/react-leaflet-core@^1.1.1", "@react-leaflet/core@npm:@monsonjeremy/react-leaflet-core":
+"@monsonjeremy/react-leaflet-core@1.1.1", "@react-leaflet/core@npm:@monsonjeremy/react-leaflet-core":
   name "@react-leaflet/core"
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@monsonjeremy/react-leaflet-core/-/react-leaflet-core-1.1.1.tgz#123aaf1f500214c0585967c5efd9f43453846220"

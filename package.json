@@ -7,7 +7,6 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@monsonjeremy/react-leaflet-core": "^1.1.1",
     "@react-leaflet/core": "npm:@monsonjeremy/react-leaflet-core",
     "academicons": "^1.8.6",
     "add": "^2.0.6",
