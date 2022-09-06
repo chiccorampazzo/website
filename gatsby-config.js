@@ -5,7 +5,7 @@ module.exports = {
     author: `@chiccorampazzo`,
     siteUrl: `https://francescorampazzo.com`,
     contact: {
-      email: `Francesco.Rampazzo@sbs.ox.ac.uk`,
+      email: `Francesco.Rampazzo@sociology.ox.ac.uk`,
       twitter: `chiccorampazzo`,
       linkedin: `frampazzo`,
       googleScholar: `_oD24CIAAAAJ`,
