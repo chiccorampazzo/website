@@ -9,6 +9,7 @@ module.exports = {
       twitter: `chiccorampazzo`,
       linkedin: `frampazzo`,
       googleScholar: `_oD24CIAAAAJ`,
+      mastodon: `https://mastodon.social/@chiccorampazzo`,
     },
     seo: {
       sameAs: [

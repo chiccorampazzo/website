@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa"
+import { FaTwitter, FaLinkedin, FaEnvelope, FaMastodon } from "react-icons/fa"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -13,6 +13,7 @@ const Footer = () => {
             twitter
             linkedin
             googleScholar
+            mastodon
           }
         }
       }
@@ -38,6 +39,9 @@ const Footer = () => {
         }
       >
         <FaLinkedin size={40} className="m-5 text-black" />
+      </a>
+      <a href={data.site.siteMetadata.contact.mastodon}>
+        <FaMastodon size={40} className="m-5 text-black" />
       </a>
       <a href={`mailto:` + data.site.siteMetadata.contact.email}>
         <FaEnvelope size={40} className="m-5 text-black" />
