@@ -13,7 +13,6 @@ const Footer = () => {
             twitter
             linkedin
             googleScholar
-            mastodon
           }
         }
       }
@@ -39,9 +38,6 @@ const Footer = () => {
         }
       >
         <FaLinkedin size={40} className="m-5 text-black" />
-      </a>
-      <a href={data.site.siteMetadata.contact.mastodon}>
-        <FaMastodon size={40} className="m-5 text-black" />
       </a>
       <a href={`mailto:` + data.site.siteMetadata.contact.email}>
         <FaEnvelope size={40} className="m-5 text-black" />
