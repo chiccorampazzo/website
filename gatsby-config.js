@@ -14,7 +14,7 @@ module.exports = {
     seo: {
       sameAs: [
         "https://twitter.com/chiccorampazzo",
-        "https://www.sbs.ox.ac.uk/about-us/people/francesco-rampazzo",
+        "https://www.sociology.ox.ac.uk/people/francesco-rampazzo",
         "https://scholar.google.com/citations?user=_oD24CIAAAAJ",
       ],
     },
