@@ -17,21 +17,7 @@ module.exports = {
         "https://www.sociology.ox.ac.uk/people/francesco-rampazzo",
         "https://scholar.google.com/citations?user=_oD24CIAAAAJ",
       ],
-    },
-    nav: [
-      {
-        name: "About me",
-        page: "/about-me/",
-      },
-      {
-        name: "Publications",
-        page: "/publications/",
-      },
-      {
-        name: "Blog",
-        page: "/blog/",
-      },
-    ],
+    }
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -78,7 +64,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`],
+        extensions: [`.md`],
         defaultLayouts: {
           pages: require.resolve("./src/components/layout.js"),
         },

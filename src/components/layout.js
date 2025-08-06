@@ -36,17 +36,15 @@ const Layout = ({
       <SEO title={title} description={description} lang={lang} />
       <Header
         siteTitle={data.site.siteMetadata.title || `Title`}
-        fullpage={fullpage}
+        //fullpage={fullpage}
       />
 
-      <main
-        className={"mx-auto max-w-3xl " + (!fullpage ? `p-5 mt-32 mb-20` : ``)}
-      >
+      <main className="mx-auto max-w-3xl">
         {!fullpage && <h1 className="text-5xl mb-4 font-bold">{title}</h1>}
         {children}
       </main>
 
-      {!fullpage && <Footer />}
+      <Footer />
     </>
   )
 }

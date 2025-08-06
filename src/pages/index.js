@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Avatar from "../components/avatar"
 import Social from "../components/social"
+import Bio from "../components/bio"
 
 const IndexPage = () => (
   <Layout
@@ -16,7 +17,7 @@ const IndexPage = () => (
         justifyContent: `center`,
         alignItems: `center`,
         flexDirection: `column`,
-        height: `100vh`,
+        //height: `100vh`,
         margin: `auto`,
       }}
     >
@@ -28,12 +29,10 @@ const IndexPage = () => (
           Francesco Rampazzo
         </h1>
       </div>
-      <h2 className="text-gray-600 mt-4 font-medium text-xl uppercase tracking-widest">
+      <h2 className="text-gray-600 my-6 font-medium text-xl uppercase tracking-widest">
         Demographer
       </h2>
-      <div className="mt-4 flex">
-        <Social />
-      </div>
+      <Bio />
     </div>
   </Layout>
 )
