@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Bio = () => {
   return (
-    <div className="about-me-content">
+    <div className="mx-6 mt-4">
       <p>
         I am a Lecturer in Demography at the{" "}
         <a href="https://www.sociology.ox.ac.uk/people/francesco-rampazzo">
@@ -38,8 +38,8 @@ const Bio = () => {
         fertility, migration, and survey research.
       </p>
 
-      <p>
-        <Link to="/assets/Francesco-Rampazzo-CV.pdf">Curriculum Vitae</Link>.
+      <p className="text-center font-semibold">
+        <Link to="/assets/Francesco-Rampazzo-CV.pdf">Curriculum Vitae</Link>
       </p>
     </div>
   )

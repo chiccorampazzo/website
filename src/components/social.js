@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { FaTwitter, FaLinkedin, FaEnvelope, FaMastodon } from "react-icons/fa"
+import { FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
