@@ -8,10 +8,10 @@
 
 @layer base {
   main a {
-    @apply text-blue-50;
+    @apply text-blue-600 ;
   }
   main a:hover {
-    @apply text-yellow-600;
+    @apply text-yellow-500;
   }
   main p {
     @apply mb-8;
