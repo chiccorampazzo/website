@@ -1,15 +1,10 @@
-# v2
+### [francescorampazzo.com](https://francescorampazzo.com)
 
 My personal blog.
 
-To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
-
-### [francescorampazzo.com](https://francescorampazzo.com)
+To run locally, `nvm use 22`, `pnpm`, `pnpn run dev`, then open https://localhost:3000.
 
 ## Tech Stack
 
-- Gatsby.js
-- MDX
+- Nextjs
 - Tailwind
-- react-icons
-- Academicons
