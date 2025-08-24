@@ -2,11 +2,11 @@ import Link from 'next/link'
 
 const Header = () => {
   return (
-    <header className="bg-gradient-to-r z-50 from-yellow-600 to-yellow-300 mb-12 w-full top-0">
+    <header className="bg-linear-to-r z-50 from-yellow-600 to-yellow-300 mb-12 w-full top-0">
       <div className="p-1.5 max-w-4xl m-auto">
         <div className="relative flex items-center justify-between h-16">
           <Link href="/" className="flex justify-center">
-            <div className="flex flex-shrink-0 items-center text-white font-extralight text-base md:text-xl uppercase">
+            <div className="flex shrink-0 items-center text-white font-extralight text-base md:text-xl uppercase">
               Francesco &nbsp; <span className="font-semibold">Rampazzo</span>
             </div>
           </Link>

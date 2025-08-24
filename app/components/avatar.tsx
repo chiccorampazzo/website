@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Avatar = () => {
   return (
     <div
-      className="bg-gradient-to-r  from-yellow-600 to-yellow-300 mb-12 p-1 flex"
+      className="bg-linear-to-r  from-yellow-600 to-yellow-300 mb-12 p-1 flex"
       style={{
         borderRadius: "100%",
         margin: `auto`,
