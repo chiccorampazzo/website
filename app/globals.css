@@ -7,8 +7,11 @@
 }
 
 @layer base {
+  main {
+    @apply mx-auto max-w-3xl;
+  }
   main a {
-    @apply text-blue-600 ;
+    @apply text-blue-600;
   }
   main a:hover {
     @apply text-yellow-500;
@@ -17,6 +20,7 @@
     @apply mb-8;
     @apply text-xl;
     @apply leading-loose;
+    @apply text-justify;
   }
   main ul {
     @apply mb-8;
