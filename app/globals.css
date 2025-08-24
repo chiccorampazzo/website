@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Butler";
+  src: url("./fonts/Butler-Bold.woff") format("woff");
+}
+
+@layer base {
+  main a {
+    @apply text-blue-50;
+  }
+  main a:hover {
+    @apply text-yellow-600;
+  }
+  main p {
+    @apply mb-8;
+    @apply text-xl;
+    @apply leading-loose;
+  }
+  main ul {
+    @apply mb-8;
+    @apply text-xl;
+    @apply leading-loose;
+    @apply list-disc;
+  }
+}
