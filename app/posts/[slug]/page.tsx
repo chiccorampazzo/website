@@ -18,7 +18,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }) {
   const post = await getPost(params.slug)
   const date = extractDateFromSlug(params.slug)
   if (!post) return notFound()

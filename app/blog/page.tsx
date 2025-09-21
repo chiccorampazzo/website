@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
+import matter from 'gray-matter'
 
 export default function BlogIndexPage() {
   const postsDir = path.join(process.cwd(), '_posts')
@@ -17,10 +18,10 @@ export default function BlogIndexPage() {
         let title = ''
         try {
           const fileContent = fs.readFileSync(filePath, 'utf8')
-          const { data } = require('gray-matter')(fileContent)
+          const { data } = matter(fileContent)
           title = data.title || ''
-        } catch (e) {
-          // ignore
+        } catch (_) {
+          // ignore errors
         }
         if (!title) {
           // fallback to filename title
