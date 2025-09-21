@@ -1,0 +1,15 @@
+[[redirects]]
+  from = "/:year/:month/:slug"
+  to = "/posts/:year-:month-:slug"
+  status = 301
+  force = true
+
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
