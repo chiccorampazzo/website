@@ -27,9 +27,16 @@ export default function BlogIndexPage() {
           // fallback to filename title
           title = match ? match[2].replace(/-/g, ' ') : slug
         }
+        // Extract year and month from the date for URL construction
+        const dateParts = date ? date.split('-') : []
+        const year = dateParts[0] || ''
+        const month = dateParts[1] || ''
+        
         return {
           slug,
           date,
+          year,
+          month,
           title,
           filename: file,
         }
@@ -42,9 +49,13 @@ export default function BlogIndexPage() {
       <h1 className="text-5xl mb-4 font-bold">Blog</h1>
         {posts.map(post => (
           <div key={post.slug}>
-            <Link href={`/posts/${post.slug}`} className="flex justify-between my-5 text-gray-800">
+            <Link 
+              href={post.year && post.month ? 
+                `/posts/${post.year}/${post.month}/${post.slug.replace(/^\d{4}-\d{2}-\d{2}-/, '')}` : 
+                `/posts/${post.slug}`
+              } 
+              className="flex justify-between my-5 text-gray-800">
                 <div className="text-xl font-semibold hover:underline">
-                    
                     {post.title.replace(/-/g, ' ').charAt(0).toUpperCase() + post.title.replace(/-/g, ' ').slice(1) || `Untitled`}
                 </div>
                 <div className="text-lg font-thin">{post.date}</div>

@@ -9,6 +9,7 @@
 @layer base {
   main {
     @apply mx-auto max-w-3xl;
+    @apply my-8;
   }
   main a {
     @apply text-blue-600;

@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/:year/:month/:slug"
-  to = "/posts/:year-:month-:slug"
+  to = "/posts/:year/:month/:slug"
   status = 301
   force = true
 
