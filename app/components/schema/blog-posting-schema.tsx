@@ -6,7 +6,6 @@ export default function BlogPostingSchema({
   description, 
   datePublished,
   url,
-  image = null
 }) {
   const blogPostSchema = {
     "@context": "https://schema.org",
@@ -18,10 +17,7 @@ export default function BlogPostingSchema({
     author: {
       "@type": "Person",
       name: "Francesco Rampazzo",
-      url: "https://francescorampazzo.com"
-    ...(image && {
-      image: image
-    }),
+    },
     publisher: {
       "@type": "Person",
       name: "Francesco Rampazzo",
