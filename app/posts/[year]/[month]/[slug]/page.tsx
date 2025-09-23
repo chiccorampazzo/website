@@ -6,11 +6,29 @@ import { marked } from 'marked'
 import type { Metadata } from 'next'
 import BlogPostingSchema from '../../../../components/schema/blog-posting-schema'
 
+// In newer versions of marked, it returns a Promise
+// This helper function handles both synchronous and asynchronous versions
+async function parseMarkdown(content: string): Promise<string> {
+  try {
+    const result = marked(content);
+    // If marked returns a promise
+    if (result && typeof result === 'object' && 'then' in result) {
+      return await result;
+    }
+    // If marked returns a string directly
+    return result as string;
+  } catch (error) {
+    console.error('Error parsing markdown:', error);
+    return '';
+  }
+}
+
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), '_posts')
   const files = fs.readdirSync(postsDir)
   
-  return files.map(file => {
+  // Generate params for static generation
+  const params = files.map(file => {
     // Extract year, month, and slug from filename (e.g., 2013-02-27-si-parte-con-alicia.md)
     const match = file.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)\.md$/)
     if (!match) return null
@@ -19,10 +37,15 @@ export async function generateStaticParams() {
     // Only include the params that are in the URL structure
     return { year, month, slug }
   }).filter(Boolean)
+  
+  return params
 }
 
 export async function generateMetadata({ params }): Promise<Metadata> {
-  const { year, month, slug } = params
+  // Ensure params is awaited before destructuring
+  const resolvedParams = await Promise.resolve(params);
+  const { year, month, slug } = resolvedParams;
+  
   const post = await getPost(year, month, slug)
   
   if (!post) return {
@@ -30,10 +53,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     description: 'The requested blog post could not be found'
   }
   
-  // Create a description from the first 160 characters of content
-  // Strip HTML tags for the description
-  const plainTextContent = post.content.replace(/<[^>]*>/g, '')
-  const description = plainTextContent.substring(0, 160) + (plainTextContent.length > 160 ? '...' : '')
+  const description = post.description
   
   return {
     title: `${post.title} | Francesco Rampazzo`,
@@ -49,7 +69,10 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }) {
-  const { year, month, slug } = params
+  // Ensure params is awaited before destructuring
+  const resolvedParams = await Promise.resolve(params);
+  const { year, month, slug } = resolvedParams;
+  
   const post = await getPost(year, month, slug)
   
   if (!post) return notFound()
@@ -102,9 +125,12 @@ async function getPost(year: string, month: string, slug: string) {
   const plainTextContent = content.replace(/[#*`_]/g, '').trim()
   const description = plainTextContent.substring(0, 160) + (plainTextContent.length > 160 ? '...' : '')
   
+  // Convert markdown to HTML - handle both sync and async versions of marked
+  const htmlContent = await parseMarkdown(content)
+  
   return {
     title: data.title || slug,
-    content: marked(content),
+    content: htmlContent, // This is now a string
     date: formattedDate,
     day, // Include the day for use in metadata
     description // Add description for SEO and schema
