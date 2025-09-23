@@ -3,6 +3,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import { notFound } from 'next/navigation'
 import { marked } from 'marked'
+import type { Metadata } from 'next'
+import BlogPostingSchema from '../../../../components/schema/blog-posting-schema'
 
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), '_posts')
@@ -19,15 +21,52 @@ export async function generateStaticParams() {
   }).filter(Boolean)
 }
 
+export async function generateMetadata({ params }): Promise<Metadata> {
+  const { year, month, slug } = params
+  const post = await getPost(year, month, slug)
+  
+  if (!post) return {
+    title: 'Post Not Found',
+    description: 'The requested blog post could not be found'
+  }
+  
+  // Create a description from the first 160 characters of content
+  // Strip HTML tags for the description
+  const plainTextContent = post.content.replace(/<[^>]*>/g, '')
+  const description = plainTextContent.substring(0, 160) + (plainTextContent.length > 160 ? '...' : '')
+  
+  return {
+    title: `${post.title} | Francesco Rampazzo`,
+    description: description,
+    openGraph: {
+      title: post.title,
+      description: description,
+      type: 'article',
+      publishedTime: `${year}-${month}-${post.day}`,
+      url: `/posts/${year}/${month}/${slug}`,
+    },
+  }
+}
+
 export default async function BlogPostPage({ params }) {
   const { year, month, slug } = params
   const post = await getPost(year, month, slug)
   
   if (!post) return notFound()
 
+  // Create ISO date format for schema
+  const isoDate = `${year}-${month}-${post.day}T00:00:00Z`
+  const postUrl = `/posts/${year}/${month}/${slug}`
+
   // Display date in desired format
   return (
     <div>
+      <BlogPostingSchema 
+        title={post.title}
+        description={post.description || `Blog post by Francesco Rampazzo: ${post.title}`}
+        datePublished={isoDate}
+        url={postUrl}
+      />
       <h1 className="text-5xl mb-4 font-bold">{post.title}</h1>
       <h2 className="text-xl mb-6 font-semibold text-gray-700">{`${post.date}`}</h2>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -59,9 +98,15 @@ async function getPost(year: string, month: string, slug: string) {
   // Format the date as desired
   const formattedDate = `${day}/${month}/${year}`
   
+  // Create a plain text description from the content
+  const plainTextContent = content.replace(/[#*`_]/g, '').trim()
+  const description = plainTextContent.substring(0, 160) + (plainTextContent.length > 160 ? '...' : '')
+  
   return {
     title: data.title || slug,
     content: marked(content),
-    date: formattedDate
+    date: formattedDate,
+    day, // Include the day for use in metadata
+    description // Add description for SEO and schema
   }
 }

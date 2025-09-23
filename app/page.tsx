@@ -1,10 +1,19 @@
 import Avatar from "./components/avatar"
-
 import Link from 'next/link'
+import type { Metadata } from 'next'
+import PersonSchema from './components/schema/person-schema'
+import WebsiteSchema from './components/schema/website-schema'
+
+export const metadata: Metadata = {
+  title: 'Francesco Rampazzo',
+  description: 'Francesco Rampazzo is a CD Fellow in Marketing and Consumer Demography at Saïd Business School and Leverhulme Centre for Demographic Science at University of Oxford.',
+}
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center text-center">
+        <PersonSchema />
+        <WebsiteSchema />
         <Avatar />
       <div className="flex items-center text-center">
         <h1 className="text-gray-900 font-semibold max-w-sm lg:max-w-lg text-4xl mt-4 justify-center">

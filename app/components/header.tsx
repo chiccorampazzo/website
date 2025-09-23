@@ -15,7 +15,7 @@ const Header = () => {
             <Link
               href="/blog"
               //activeClassName="font-bold rounded-xl bg-white bg-opacity-25"
-              className="p-4 my-2 text-white"
+              className="p-4 my-2 text-white font-semibold"
             >
               Blog
             </Link>

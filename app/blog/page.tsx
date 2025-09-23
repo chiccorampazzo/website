@@ -2,8 +2,16 @@ import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
 import matter from 'gray-matter'
+import type { Metadata } from 'next'
+import BlogCollectionSchema from '../components/schema/blog-collection-schema'
+
+export const metadata: Metadata = {
+  title: 'Blog | Francesco Rampazzo',
+  description: 'Blog posts by Francesco Rampazzo, Lecturer in Demography at University of Oxford',
+}
 
 export default function BlogIndexPage() {
+  const blogUrl = '/blog'
   const postsDir = path.join(process.cwd(), '_posts')
   const files = fs.readdirSync(postsDir).filter(file => file.endsWith('.md'))
     // Extract slug, date, and title from frontmatter (if present)
@@ -46,6 +54,7 @@ export default function BlogIndexPage() {
 
   return (
     <main>
+      <BlogCollectionSchema url={blogUrl} />
       <h1 className="text-5xl mb-4 font-bold">Blog</h1>
         {posts.map(post => (
           <div key={post.slug}>
