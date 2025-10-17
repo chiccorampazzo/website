@@ -10,8 +10,8 @@ export default function PersonSchema() {
     jobTitle: "Demographer",
     worksFor: {
       "@type": "Organization",
-      name: "University of Oxford",
-      url: "https://www.ox.ac.uk/"
+      name: "University of Manchester",
+      url: "https://www.manchester.ac.uk/"
     },
     sameAs: [
       "https://research.manchester.ac.uk/en/persons/francesco-rampazzo",

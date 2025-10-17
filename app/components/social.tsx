@@ -18,7 +18,7 @@ const Footer = () => {
       >
         <FaLinkedin size={40} className="m-5 text-black" />
       </a>
-      <a href="mailto:Francesco.Rampazzo@sociology.ox.ac.uk">
+      <a href="mailto:francesco.rampazzo@manchester.ac.uk">
         <FaEnvelope size={40} className="m-5 text-black" />
       </a>
     </>
