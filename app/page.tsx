@@ -27,36 +27,21 @@ export default function Home() {
       <div className="mx-6 mt-4">
         <p>
           I am a Britalian demographer and a Lecturer in Social Statistics and
-          Demography at the University of Manchester. My research combines
-          sociology, demography, and computational social science to explore how
-          online data can shed light on population dynamics, with a focus on
-          fertility, migration, and survey research.
+          Demography at the University of Manchester, with a PhD in Social
+          Statistics and Demography from the University of Southampton. My
+          research combines sociology, demography, and computational social
+          science to explore how online data can shed light on population
+          dynamics, particularly in the areas of fertility, migration, and
+          survey research.
         </p>
 
         <p>
-          Before joining Manchester, I was a Lecturer in Demography at the
-          University of Oxford, where I was affiliated with the Leverhulme
-          Centre for Demographic Science and Nuffield College, and earlier a
-          Career Development Fellow in Marketing and Consumer Demography at Saïd
-          Business School.
-        </p>
-
-        <p>
-          I hold a PhD in Social Statistics and Demography from the University
-          of Southampton, where I was a Doctoral Fellow at the Max Planck
-          Institute for Demographic Research. I also studied at the European
-          Doctoral School of Demography, earned an MSc in Demography from
-          Stockholm University, and a BSc in Statistical Science, Economics, and
-          Finance from the University of Padova.
-        </p>
-
-        <p>
-          I maintain ongoing collaborations with academia and industry. I am a
-          Guest Researcher at the Max Planck Institute for Demographic Research
-          and an Associate Member of Nuffield College and the Department of
-          Sociology at Oxford. My current research includes partnerships with
-          MammaPack, Getty Images, Cosmic Latte (owner of two online dating
-          apps), and Nielsen BookData, applying demographic methods to
+          I am also a Guest Researcher at the Max Planck Institute for
+          Demographic Research and an Associate Member of the Centre for
+          Population Change at the University of Southampton, the Department of
+          Sociology at the University of Oxford, and Nuffield College, Oxford.
+          My work includes collaborations with Cosmic Latte, Getty Images,
+          MammaPack, and Nielsen BookData, applying demographic methods to
           large-scale digital and commercial datasets.
         </p>
 
