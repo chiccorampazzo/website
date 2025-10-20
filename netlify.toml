@@ -4,6 +4,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/about-me/"
+  to = "/"
+  status = 301
+  force = true
+
 [build]
   command = "pnpm build"
   publish = ".next"
