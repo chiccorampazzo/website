@@ -27,12 +27,15 @@ export default function Home() {
       <div className="mx-6 mt-4">
         <p>
           I am a Britalian demographer and a Lecturer in Social Statistics and
-          Demography at the University of Manchester, with a PhD in Social
-          Statistics and Demography from the University of Southampton. My
-          research combines sociology, demography, and computational social
-          science to explore how online data can shed light on population
-          dynamics, particularly in the areas of fertility, migration, and
-          survey research.
+          Demography at the{" "}
+          <a href="https://research.manchester.ac.uk/en/persons/francesco-rampazzo/">
+            University of Manchester
+          </a>
+          , with a PhD in Social Statistics and Demography from the University
+          of Southampton. My research combines sociology, demography, and
+          computational social science to explore how online data can shed light
+          on population dynamics, particularly in the areas of fertility,
+          migration, and survey research.
         </p>
 
         <p>
