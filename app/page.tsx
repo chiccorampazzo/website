@@ -12,19 +12,17 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className="flex flex-col items-center">
       <PersonSchema />
       <WebsiteSchema />
       <Avatar />
-      <div className="flex items-center text-center">
-        <h1 className="text-gray-900 font-semibold max-w-sm lg:max-w-lg text-4xl mt-4 justify-center">
-          Francesco Rampazzo
-        </h1>
-      </div>
-      <h2 className="text-gray-600 my-6 font-medium text-xl uppercase tracking-widest">
+      <h1 className="text-gray-900 font-semibold text-3xl sm:text-4xl text-center">
+        Francesco Rampazzo
+      </h1>
+      <h2 className="text-gray-600 mt-3 mb-8 font-medium text-lg sm:text-xl uppercase tracking-widest text-center">
         Demographer
       </h2>
-      <div className="mx-6 mt-4">
+      <div className="px-4 sm:px-6">
         <p>
           I am a Britalian demographer and a Lecturer in Social Statistics and
           Demography at the{" "}
@@ -91,8 +89,13 @@ export default function Home() {
           .
         </p>
 
-        <p className="text-center font-semibold">
-          <Link href="/assets/Francesco-Rampazzo-CV.pdf">Curriculum Vitae</Link>
+        <p className="text-center mt-8">
+          <Link 
+            href="/assets/Francesco-Rampazzo-CV.pdf"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 no-underline transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600"
+          >
+            Download CV
+          </Link>
         </p>
       </div>
     </div>
