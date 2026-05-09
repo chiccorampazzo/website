@@ -16,10 +16,10 @@ export default function Home() {
       <PersonSchema />
       <WebsiteSchema />
       <Avatar />
-      <h1 className="text-gray-900 font-semibold text-3xl sm:text-4xl text-center">
+      <h1 className="text-gray-900 font-semibold text-2xl sm:text-4xl text-center">
         Francesco Rampazzo
       </h1>
-      <h2 className="text-gray-600 mt-3 mb-8 font-medium text-lg sm:text-xl uppercase tracking-widest text-center">
+      <h2 className="text-gray-600 mt-3 mb-8 font-medium text-base sm:text-xl uppercase tracking-widest text-center">
         Demographer
       </h2>
       <div className="px-4 sm:px-6">
@@ -92,9 +92,8 @@ export default function Home() {
         <p className="text-center mt-8">
           <Link 
             href="/assets/Francesco-Rampazzo-CV.pdf"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 no-underline transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600"
           >
-            Download CV
+            Curriculum Vitae
           </Link>
         </p>
       </div>
