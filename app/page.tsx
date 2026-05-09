@@ -1,4 +1,3 @@
-import Avatar from "./components/avatar"
 import Link from "next/link"
 import type { Metadata } from "next"
 import PersonSchema from "./components/schema/person-schema"
@@ -15,13 +14,8 @@ export default function Home() {
     <div className="flex flex-col items-center">
       <PersonSchema />
       <WebsiteSchema />
-      <Avatar />
-      <h1 className="text-gray-900 font-semibold text-2xl sm:text-4xl text-center">
-        Francesco Rampazzo
-      </h1>
-      <h2 className="text-gray-600 mt-3 mb-8 font-medium text-base sm:text-xl uppercase tracking-widest text-center">
-        Demographer
-      </h2>
+      <h1 className="sr-only">Francesco Rampazzo</h1>
+      <h2 className="sr-only">Demographer</h2>
       <div className="px-4 sm:px-6">
         <p>
           I am a Britalian demographer and a Lecturer in Social Statistics and
