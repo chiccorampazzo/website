@@ -19,13 +19,13 @@
   }
   main p {
     @apply mb-6;
-    @apply text-lg sm:text-xl;
+    @apply text-base sm:text-lg lg:text-xl;
     @apply leading-relaxed;
     @apply text-gray-800;
   }
   main ul {
     @apply mb-6;
-    @apply text-lg sm:text-xl;
+    @apply text-base sm:text-lg lg:text-xl;
     @apply leading-relaxed;
     @apply list-disc;
     @apply ml-6;
