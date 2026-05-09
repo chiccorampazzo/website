@@ -83,17 +83,21 @@ export default async function BlogPostPage({ params }) {
 
   // Display date in desired format
   return (
-    <div>
+    <article>
       <BlogPostingSchema 
         title={post.title}
         description={post.description || `Blog post by Francesco Rampazzo: ${post.title}`}
         datePublished={isoDate}
         url={postUrl}
       />
-      <h1 className="text-5xl mb-4 font-bold">{post.title}</h1>
-      <h2 className="text-xl mb-6 font-semibold text-gray-700">{`${post.date}`}</h2>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </div>
+      <header>
+        <h1 className="text-5xl mb-4 font-bold">{post.title}</h1>
+        <time dateTime={isoDate} className="block text-xl mb-6 font-semibold text-gray-700">
+          {post.date}
+        </time>
+      </header>
+      <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+    </article>
   )
 }
 

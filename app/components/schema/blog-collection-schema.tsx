@@ -1,7 +1,11 @@
 import Script from 'next/script';
 
+interface BlogCollectionSchemaProps {
+  url: string;
+}
+
 // Blog collection schema for the blog index page
-export default function BlogCollectionSchema({ url }) {
+export default function BlogCollectionSchema({ url }: BlogCollectionSchemaProps) {
   const blogCollectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",

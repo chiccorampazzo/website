@@ -6,7 +6,7 @@ export default function WebsiteSchema() {
     "@type": "WebSite",
     name: "Francesco Rampazzo",
     url: "https://francescorampazzo.com",
-    description: "Francesco Rampazzo is a Lecturer in Demography at the University of Oxford",
+    description: "Francesco Rampazzo is a Lecturer in Social Statistics and Demography at the University of Manchester",
     author: {
       "@type": "Person",
       name: "Francesco Rampazzo"

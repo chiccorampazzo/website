@@ -7,7 +7,7 @@ import WebsiteSchema from "./components/schema/website-schema"
 export const metadata: Metadata = {
   title: "Francesco Rampazzo",
   description:
-    "Francesco Rampazzo is a CD Fellow in Marketing and Consumer Demography at Saïd Business School and Leverhulme Centre for Demographic Science at University of Oxford.",
+    "Francesco Rampazzo is a Lecturer in Social Statistics and Demography at the University of Manchester, specializing in computational demography and digital data.",
 }
 
 export default function Home() {
