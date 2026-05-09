@@ -12,10 +12,10 @@
     @apply my-8;
   }
   main a {
-    @apply text-blue-600;
+    @apply text-blue-700 underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 rounded transition-colors;
   }
   main a:hover {
-    @apply text-yellow-500;
+    @apply text-blue-900 bg-blue-100;
   }
   main p {
     @apply mb-8;
@@ -28,5 +28,6 @@
     @apply text-xl;
     @apply leading-loose;
     @apply list-disc;
+    @apply ml-6;
   }
 }

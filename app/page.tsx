@@ -28,7 +28,11 @@ export default function Home() {
         <p>
           I am a Britalian demographer and a Lecturer in Social Statistics and
           Demography at the{" "}
-          <a href="https://research.manchester.ac.uk/en/persons/francesco-rampazzo/">
+          <a 
+            href="https://research.manchester.ac.uk/en/persons/francesco-rampazzo/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             University of Manchester
           </a>
           , with a PhD in Social Statistics and Demography from the University
@@ -53,16 +57,35 @@ export default function Home() {
           <i>International Migration Review</i>, <i>EPJ Data Science</i>, and{" "}
           <i>Political Science Research and Methods</i>. It has also been
           featured in the{" "}
-          <a href="https://www.bbc.co.uk/programmes/w3ct73rf">BBC</a>,{" "}
-          <a href="https://www.thetimes.com/life-style/health-fitness/article/menstrual-cycle-app-track-women-mr7nqnsbn">
+          <a 
+            href="https://www.bbc.co.uk/programmes/w3ct73rf"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            BBC
+          </a>
+          ,{" "}
+          <a 
+            href="https://www.thetimes.com/life-style/health-fitness/article/menstrual-cycle-app-track-women-mr7nqnsbn"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             The Times
           </a>
           ,{" "}
-          <a href="https://tg24.sky.it/cronaca/2024/11/29/dati-app-mestruazioni">
+          <a 
+            href="https://tg24.sky.it/cronaca/2024/11/29/dati-app-mestruazioni"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Sky News
           </a>
           , and the{" "}
-          <a href="https://www.dailymail.co.uk/news/article-10186111/Number-EU-migrants-Britain-20-higher-official-data-claims-Oxford-study.html">
+          <a 
+            href="https://www.dailymail.co.uk/news/article-10186111/Number-EU-migrants-Britain-20-higher-official-data-claims-Oxford-study.html"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Daily Mail
           </a>
           .
