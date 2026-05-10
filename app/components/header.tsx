@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Avatar from './avatar'
 
 const Header = () => {
   return (
@@ -15,7 +14,12 @@ const Header = () => {
             </div>
           </Link>
 
-          <Avatar />
+          <Link
+            href="/blog"
+            className="text-white font-semibold text-sm sm:text-base px-3 py-1.5 rounded hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-700 transition-colors"
+          >
+            Blog
+          </Link>
         </div>
       </div>
     </header>

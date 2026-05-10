@@ -2,6 +2,7 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import PersonSchema from "./components/schema/person-schema"
 import WebsiteSchema from "./components/schema/website-schema"
+import Avatar from "./components/avatar"
 
 export const metadata: Metadata = {
   title: "Francesco Rampazzo",
@@ -14,8 +15,13 @@ export default function Home() {
     <div className="flex flex-col items-center">
       <PersonSchema />
       <WebsiteSchema />
-      <h1 className="sr-only">Francesco Rampazzo</h1>
-      <h2 className="sr-only">Demographer</h2>
+      <Avatar />
+      <h1 className="text-gray-900 font-semibold text-2xl sm:text-3xl text-center mt-2">
+        Francesco Rampazzo
+      </h1>
+      <p className="text-gray-500 mt-2 mb-8 text-sm sm:text-base uppercase tracking-widest text-center">
+        Demographer
+      </p>
       <div className="px-4 sm:px-6">
         <p>
           I am a Britalian demographer and a Lecturer in Social Statistics and

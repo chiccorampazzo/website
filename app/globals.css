@@ -15,7 +15,7 @@
     @apply text-blue-700 underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 rounded transition-colors;
   }
   main a:hover {
-    @apply text-blue-900 bg-blue-100;
+    @apply text-blue-900;
   }
   main p {
     @apply mb-6;
