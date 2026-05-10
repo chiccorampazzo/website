@@ -48,8 +48,8 @@ interface BlogPostParams {
   slug: string;
 }
 
-export async function generateMetadata({ params }: { params: BlogPostParams }): Promise<Metadata> {
-  const { year, month, slug } = params;
+export async function generateMetadata({ params }: { params: Promise<BlogPostParams> }): Promise<Metadata> {
+  const { year, month, slug } = await params;
   
   const post = await getPost(year, month, slug)
   
@@ -73,8 +73,8 @@ export async function generateMetadata({ params }: { params: BlogPostParams }): 
   }
 }
 
-export default async function BlogPostPage({ params }: { params: BlogPostParams }) {
-  const { year, month, slug } = params;
+export default async function BlogPostPage({ params }: { params: Promise<BlogPostParams> }) {
+  const { year, month, slug } = await params;
   
   const post = await getPost(year, month, slug)
   
