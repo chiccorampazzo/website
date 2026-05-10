@@ -55,7 +55,7 @@ export default function BlogIndexPage() {
   return (
     <>
       <BlogCollectionSchema url={blogUrl} />
-      <h1 className="text-5xl mb-4 font-bold">Blog</h1>
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl mb-4 font-bold">Blog</h1>
       <ul className="list-none ml-0">
         {posts.map(post => (
           <li key={post.slug}>
@@ -64,7 +64,7 @@ export default function BlogIndexPage() {
                 `/posts/${post.year}/${post.month}/${post.slug.replace(/^\d{4}-\d{2}-\d{2}-/, '')}` : 
                 `/posts/${post.slug}`
               } 
-              className="flex justify-between my-5 py-2 px-3 -mx-3 rounded-lg no-underline text-foreground hover:bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600 transition-colors"
+              className="flex justify-between my-5 py-2 px-3 -mx-3 rounded-lg no-underline text-gray-900 hover:bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600 transition-colors"
             >
               <span className="text-xl font-semibold">
                 {post.title.replace(/-/g, ' ').charAt(0).toUpperCase() + post.title.replace(/-/g, ' ').slice(1) || `Untitled`}

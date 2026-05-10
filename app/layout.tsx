@@ -14,6 +14,21 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Francesco Rampazzo | Demographer",
   description: "Francesco Rampazzo - Demographer and Lecturer in Social Statistics at University of Manchester",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Francesco Rampazzo | Demographer",
+    description: "Francesco Rampazzo - Demographer and Lecturer in Social Statistics at University of Manchester",
+    url: "https://francescorampazzo.com",
+    siteName: "Francesco Rampazzo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Francesco Rampazzo | Demographer",
+    description: "Francesco Rampazzo - Demographer and Lecturer in Social Statistics at University of Manchester",
+  },
 };
 
 export default function RootLayout({

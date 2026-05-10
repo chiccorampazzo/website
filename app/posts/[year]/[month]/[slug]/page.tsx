@@ -41,10 +41,14 @@ export async function generateStaticParams() {
   return params
 }
 
-export async function generateMetadata({ params }): Promise<Metadata> {
-  // Ensure params is awaited before destructuring
-  const resolvedParams = await Promise.resolve(params);
-  const { year, month, slug } = resolvedParams;
+interface BlogPostParams {
+  year: string;
+  month: string;
+  slug: string;
+}
+
+export async function generateMetadata({ params }: { params: BlogPostParams }): Promise<Metadata> {
+  const { year, month, slug } = params;
   
   const post = await getPost(year, month, slug)
   
@@ -68,10 +72,8 @@ export async function generateMetadata({ params }): Promise<Metadata> {
   }
 }
 
-export default async function BlogPostPage({ params }) {
-  // Ensure params is awaited before destructuring
-  const resolvedParams = await Promise.resolve(params);
-  const { year, month, slug } = resolvedParams;
+export default async function BlogPostPage({ params }: { params: BlogPostParams }) {
+  const { year, month, slug } = params;
   
   const post = await getPost(year, month, slug)
   
@@ -91,12 +93,18 @@ export default async function BlogPostPage({ params }) {
         url={postUrl}
       />
       <header>
-        <h1 className="text-5xl mb-4 font-bold">{post.title}</h1>
-        <time dateTime={isoDate} className="block text-xl mb-6 font-semibold text-gray-700">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl mb-4 font-bold">{post.title}</h1>
+        <time dateTime={isoDate} className="block text-base sm:text-lg lg:text-xl mb-6 font-semibold text-gray-700">
           {post.date}
         </time>
       </header>
-      <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <Link 
+        href="/blog" 
+        className="inline-block mb-8 text-blue-700 underline hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 rounded transition-colors"
+      >
+        ← Back to blog
+      </Link>
+      <div className="prose-content" dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
   )
 }
