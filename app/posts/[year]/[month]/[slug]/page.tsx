@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { marked } from 'marked'
 import type { Metadata } from 'next'
