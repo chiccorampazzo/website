@@ -99,12 +99,22 @@ export default async function BlogPostPage({ params }: { params: Promise<BlogPos
           {post.date}
         </time>
       </header>
-      <Link 
-        href="/blog" 
-        className="inline-block mb-8 text-blue-700 underline hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 rounded transition-colors"
-      >
-        ← Back to blog
-      </Link>
+      <div className="mb-8">
+        <Link 
+          href="/blog" 
+          className="group inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full text-gray-700 font-medium no-underline hover:border-yellow-500 hover:text-yellow-600 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+        >
+          <svg 
+            className="w-4 h-4 transition-transform group-hover:translate-x-0.5" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to blog
+        </Link>
+      </div>
       <div className="prose-content" dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
   )

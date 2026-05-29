@@ -64,12 +64,12 @@ export default function BlogIndexPage() {
                 `/posts/${post.year}/${post.month}/${post.slug.replace(/^\d{4}-\d{2}-\d{2}-/, '')}` : 
                 `/posts/${post.slug}`
               } 
-              className="flex justify-between my-5 py-2 px-3 -mx-3 rounded-lg no-underline text-gray-900 hover:bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600 transition-colors"
+              className="flex flex-col sm:flex-row sm:justify-between my-5 py-2 px-3 -mx-3 rounded-lg no-underline text-gray-900 hover:bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600 transition-colors gap-2 sm:gap-0"
             >
-              <span className="text-xl font-semibold">
+              <span className="text-base sm:text-lg lg:text-xl font-semibold truncate">
                 {post.title.replace(/-/g, ' ').charAt(0).toUpperCase() + post.title.replace(/-/g, ' ').slice(1) || `Untitled`}
               </span>
-              <time dateTime={post.date} className="text-lg font-thin text-gray-600">
+              <time dateTime={post.date} className="text-sm sm:text-base font-thin text-gray-600 shrink-0">
                 {post.date}
               </time>
             </Link>

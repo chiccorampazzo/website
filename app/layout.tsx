@@ -23,11 +23,20 @@ export const metadata: Metadata = {
     url: "https://francescorampazzo.com",
     siteName: "Francesco Rampazzo",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Francesco Rampazzo",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Francesco Rampazzo | Demographer",
     description: "Francesco Rampazzo - Demographer and Lecturer in Social Statistics at University of Manchester",
+    images: ["/og-image.png"],
   },
 };
 

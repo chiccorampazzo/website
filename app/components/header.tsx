@@ -1,6 +1,12 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
+  const pathname = usePathname()
+  const isBlogPage = pathname.startsWith('/blog') || pathname.startsWith('/posts')
+
   return (
     <header className="bg-yellow-500 w-full top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
@@ -16,6 +22,7 @@ const Header = () => {
 
           <Link
             href="/blog"
+            aria-current={isBlogPage ? "page" : undefined}
             className="text-white font-semibold text-sm sm:text-base px-3 py-1.5 rounded hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-700 transition-colors"
           >
             Blog
