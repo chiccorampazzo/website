@@ -7,7 +7,7 @@ export default function PersonSchema() {
     "@type": "Person",
     name: "Francesco Rampazzo",
     url: "https://francescorampazzo.com",
-    jobTitle: "Demographer",
+    jobTitle: "Lecturer in Social Statistics and Demography",
     worksFor: {
       "@type": "Organization",
       name: "University of Manchester",
@@ -15,8 +15,9 @@ export default function PersonSchema() {
     },
     sameAs: [
       "https://research.manchester.ac.uk/en/persons/francesco-rampazzo",
-      "https://www.demography.ox.ac.uk/people/francesco-rampazzo",
-      "https://scholar.google.com/citations?user=_oD24CIAAAAJ"
+      "https://scholar.google.com/citations?user=_oD24CIAAAAJ",
+      "https://linkedin.com/in/frampazzo",
+      "https://bsky.app/profile/francescorampazzo.com"
     ]
   };
 

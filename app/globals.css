@@ -1,32 +1,60 @@
 @import "tailwindcss";
 @reference "tailwindcss";
 
-@font-face {
-  font-family: "Butler";
-  src: url("./fonts/Butler-Bold.woff") format("woff");
-}
-
 @layer base {
   main {
     @apply mx-auto max-w-3xl;
-    @apply my-8;
+    @apply py-8;
   }
   main a {
-    @apply text-blue-600;
+    @apply text-blue-700 underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 rounded transition-colors;
   }
   main a:hover {
-    @apply text-yellow-500;
+    @apply text-blue-900;
   }
   main p {
-    @apply mb-8;
-    @apply text-xl;
-    @apply leading-loose;
-    @apply text-justify;
+    @apply mb-6;
+    @apply text-base sm:text-lg lg:text-xl;
+    @apply leading-relaxed;
+    @apply text-gray-800;
   }
   main ul {
-    @apply mb-8;
-    @apply text-xl;
-    @apply leading-loose;
+    @apply mb-6;
+    @apply text-base sm:text-lg lg:text-xl;
+    @apply leading-relaxed;
     @apply list-disc;
+    @apply ml-6;
+  }
+  .prose-content h1,
+  .prose-content h2,
+  .prose-content h3,
+  .prose-content h4,
+  .prose-content h5,
+  .prose-content h6 {
+    @apply font-bold mb-4 mt-6;
+  }
+  .prose-content h1 {
+    @apply text-2xl sm:text-3xl;
+  }
+  .prose-content h2 {
+    @apply text-xl sm:text-2xl;
+  }
+  .prose-content h3 {
+    @apply text-lg sm:text-xl;
+  }
+  .prose-content p {
+    @apply mb-4;
+  }
+  .prose-content blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-6;
+  }
+  .prose-content code {
+    @apply bg-gray-100 rounded px-2 py-1 text-sm font-mono;
+  }
+  .prose-content pre {
+    @apply bg-gray-900 text-gray-100 rounded p-4 overflow-x-auto mb-6;
+  }
+  .prose-content pre code {
+    @apply bg-transparent text-gray-100 p-0;
   }
 }

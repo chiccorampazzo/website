@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { marked } from 'marked'
 import type { Metadata } from 'next'
@@ -41,10 +42,14 @@ export async function generateStaticParams() {
   return params
 }
 
-export async function generateMetadata({ params }): Promise<Metadata> {
-  // Ensure params is awaited before destructuring
-  const resolvedParams = await Promise.resolve(params);
-  const { year, month, slug } = resolvedParams;
+interface BlogPostParams {
+  year: string;
+  month: string;
+  slug: string;
+}
+
+export async function generateMetadata({ params }: { params: Promise<BlogPostParams> }): Promise<Metadata> {
+  const { year, month, slug } = await params;
   
   const post = await getPost(year, month, slug)
   
@@ -68,10 +73,8 @@ export async function generateMetadata({ params }): Promise<Metadata> {
   }
 }
 
-export default async function BlogPostPage({ params }) {
-  // Ensure params is awaited before destructuring
-  const resolvedParams = await Promise.resolve(params);
-  const { year, month, slug } = resolvedParams;
+export default async function BlogPostPage({ params }: { params: Promise<BlogPostParams> }) {
+  const { year, month, slug } = await params;
   
   const post = await getPost(year, month, slug)
   
@@ -83,17 +86,37 @@ export default async function BlogPostPage({ params }) {
 
   // Display date in desired format
   return (
-    <div>
+    <article>
       <BlogPostingSchema 
         title={post.title}
         description={post.description || `Blog post by Francesco Rampazzo: ${post.title}`}
         datePublished={isoDate}
         url={postUrl}
       />
-      <h1 className="text-5xl mb-4 font-bold">{post.title}</h1>
-      <h2 className="text-xl mb-6 font-semibold text-gray-700">{`${post.date}`}</h2>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </div>
+      <header>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl mb-4 font-bold">{post.title}</h1>
+        <time dateTime={isoDate} className="block text-base sm:text-lg lg:text-xl mb-6 font-semibold text-gray-700">
+          {post.date}
+        </time>
+      </header>
+      <div className="mb-8">
+        <Link 
+          href="/blog" 
+          className="group inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-full text-gray-700 font-medium no-underline hover:border-yellow-500 hover:text-yellow-600 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+        >
+          <svg 
+            className="w-4 h-4 transition-transform group-hover:translate-x-0.5" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to blog
+        </Link>
+      </div>
+      <div className="prose-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+    </article>
   )
 }
 

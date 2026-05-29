@@ -1,12 +1,19 @@
 import Script from 'next/script';
 
+interface BlogPostingSchemaProps {
+  title: string;
+  description: string;
+  datePublished: string;
+  url: string;
+}
+
 // Blog posting schema for individual blog posts
 export default function BlogPostingSchema({ 
   title, 
   description, 
   datePublished,
   url,
-}) {
+}: BlogPostingSchemaProps) {
   const blogPostSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",

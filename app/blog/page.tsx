@@ -7,7 +7,7 @@ import BlogCollectionSchema from '../components/schema/blog-collection-schema'
 
 export const metadata: Metadata = {
   title: 'Blog | Francesco Rampazzo',
-  description: 'Blog posts by Francesco Rampazzo, Lecturer in Demography at University of Oxford',
+  description: 'Blog posts by Francesco Rampazzo, Lecturer in Social Statistics and Demography at University of Manchester',
 }
 
 export default function BlogIndexPage() {
@@ -53,24 +53,29 @@ export default function BlogIndexPage() {
       .sort((a, b) => (a.date < b.date ? 1 : -1))
 
   return (
-    <main>
+    <>
       <BlogCollectionSchema url={blogUrl} />
-      <h1 className="text-5xl mb-4 font-bold">Blog</h1>
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl mb-4 font-bold">Blog</h1>
+      <ul className="list-none ml-0">
         {posts.map(post => (
-          <div key={post.slug}>
+          <li key={post.slug}>
             <Link 
               href={post.year && post.month ? 
                 `/posts/${post.year}/${post.month}/${post.slug.replace(/^\d{4}-\d{2}-\d{2}-/, '')}` : 
                 `/posts/${post.slug}`
               } 
-              className="flex justify-between my-5 text-gray-800">
-                <div className="text-xl font-semibold hover:underline">
-                    {post.title.replace(/-/g, ' ').charAt(0).toUpperCase() + post.title.replace(/-/g, ' ').slice(1) || `Untitled`}
-                </div>
-                <div className="text-lg font-thin">{post.date}</div>
+              className="flex flex-col sm:flex-row sm:justify-between my-5 py-2 px-3 -mx-3 rounded-lg no-underline text-gray-900 hover:bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600 transition-colors gap-2 sm:gap-0"
+            >
+              <span className="text-base sm:text-lg lg:text-xl font-semibold truncate">
+                {post.title.replace(/-/g, ' ').charAt(0).toUpperCase() + post.title.replace(/-/g, ' ').slice(1) || `Untitled`}
+              </span>
+              <time dateTime={post.date} className="text-sm sm:text-base font-thin text-gray-600 shrink-0">
+                {post.date}
+              </time>
             </Link>
-          </div>
+          </li>
         ))}
-    </main>
+      </ul>
+    </>
   )
 }
