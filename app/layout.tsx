@@ -15,7 +15,12 @@ export const metadata: Metadata = {
   title: "Francesco Rampazzo | Demographer",
   description: "Francesco Rampazzo - Demographer and Lecturer in Social Statistics at University of Manchester",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/favicon-32.png",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Francesco Rampazzo | Demographer",
