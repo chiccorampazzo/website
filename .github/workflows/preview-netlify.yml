@@ -30,7 +30,7 @@ jobs:
         run: pnpm build
 
       - name: Deploy preview to Netlify
-        uses: netlify/actions/cli@v6
+        uses: netlify/actions/cli@master
         with:
           args: deploy --dir=.next --site=${{ secrets.NETLIFY_SITE_ID }} --message "Preview for PR #${{ github.event.pull_request.number }}"
         env:
