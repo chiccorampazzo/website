@@ -9,6 +9,9 @@ jobs:
   build-and-preview-deploy:
     name: Build and deploy preview to Netlify
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
 
     steps:
       - name: Checkout repository
@@ -30,9 +33,25 @@ jobs:
       - name: Build site
         run: pnpm build
 
-      - name: Deploy preview to Netlify
+      - id: deploy-preview
+        name: Deploy preview to Netlify
         uses: netlify/actions/cli@master
         with:
           args: deploy --dir=.next --site=${{ secrets.NETLIFY_SITE_ID }} --message "Preview for PR #${{ github.event.pull_request.number }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_KEY }}
+
+      - name: Comment preview URL on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const url = '${{ steps.deploy-preview.outputs.NETLIFY_URL }}';
+            if (!url) return;
+            await github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `✅ Netlify preview deployed for this PR:\n\n${url}`
+            })
