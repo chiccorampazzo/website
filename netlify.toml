@@ -11,7 +11,7 @@
   force = true
 
 [build]
-  command = "corepack enable && corepack prepare pnpm@10.28.2 --activate && pnpm build"
+  command = "pnpm build"
   publish = ".next"
 
 [build.environment]
