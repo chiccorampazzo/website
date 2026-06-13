@@ -3,6 +3,7 @@
   "private": true,
   "description": "francescorampazzo.com",
   "version": "v2025.0",
+  "packageManager": "pnpm@10.28.2",
   "author": "Pietro Rampazzo <pietro@rampazzo.eu>",
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",
